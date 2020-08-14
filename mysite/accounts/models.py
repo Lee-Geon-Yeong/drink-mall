@@ -36,12 +36,18 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
     
 
+import datetime
 class Account(AbstractUser):
+    SEX_CHOICES = [
+        (0, "Female"),
+        (1, "Male")
+    ]
+    sex = models.BooleanField(verbose_name='sex', null=False, default=1, blank=False, choices=SEX_CHOICES)
+    age = models.PositiveSmallIntegerField(null=True, blank=False)
     username = None
-    email = models.EmailField(_('email address'), unique=True, default=None)
+    email = models.EmailField(_('email address'), unique=True, blank=False)
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['sex','age']
     objects = CustomUserManager()
-
     def __str__(self):
         return self.email
