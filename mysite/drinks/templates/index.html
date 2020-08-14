@@ -1,15 +1,15 @@
-{%extends './base.html'%}
+{%extends 'globals/base.html'%}
 {%block content%}
 <div>
     <h2>Index: Entry point of web site</h2>
     <ul>
-    {% for object in objects%}
+        {% for object in objects%}
         <li>
             <figure><img src="{{object.image.url}}" alt="{{object.image.name}}"></figure>
             <figcaption class="brand name">{{object.brand.name}}</figcaption>
             <figcaption class="drinks desc">{{object.desc}}</figcaption>
         </li>
-    {%endfor%}
+        {%endfor%}
     </ul>
 </div>
 {%endblock%}

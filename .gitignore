@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 mysite/media/*
 mysite/static/*
+model_erd.mwb
+mysite/db_snaps/*
+
