@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'django_extensions',
+    'django_filters',
     'drinks.apps.DrinksConfig',
     'posts.apps.PostsConfig',
     'comments.apps.CommentsConfig',
@@ -65,7 +66,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,6 +131,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = "static/"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = "media/"
 
 # Additional_settings
 
