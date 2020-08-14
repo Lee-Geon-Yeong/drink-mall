@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from django.conf.urls.static import static
+from drinks.views import index_view
 
 
 urlpatterns = [
+    path('', index_view, name='index'),
     path('admin/', admin.site.urls),
     path('drinks/', include('drinks.urls')),
     path('accounts/', include('allauth.urls')),

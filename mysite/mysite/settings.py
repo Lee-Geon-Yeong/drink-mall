@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '@1k_p-1$l#h6y+0$+6m6u*w1hy6*mtjk72$1ya89(^(=64^ecb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True 
 
-ALLOWED_HOSTS = ['charlesjune.pythonanywhere.com']
+ALLOWED_HOSTS = ['charlesjune.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -81,6 +81,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'strings': 'accounts.templatetags.strings'
+            }
         },
     },
 ]

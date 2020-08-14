@@ -1,0 +1,23 @@
+{%load strings%}
+{% if user.is_authenticated %}
+<span>
+    User:
+</span>
+<a href="">
+    <li>
+        {{user.email|split:'@'|first}}
+    </li>
+</a>
+<a href="/accounts/logout/">
+    <li>
+        signout
+    </li>
+</a>
+
+
+{% else %}
+<a href="/accounts/login/">
+    <li>login</li>
+</a>
+</li>
+{%endif%}
