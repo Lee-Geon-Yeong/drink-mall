@@ -7,6 +7,6 @@ from django.views.decorators.http import require_GET, require_http_methods
 
 @require_GET
 def list_view(request):
-    #objects = get_list_or_404(Drinks.objects..order_by('-likes')[:20])
+    #objects = get_list_or_404(Drinks.objects.all().order_by('-likes')[:20])
     objects = get_list_or_404(Drinks.objects.select_related('brand').order_by('-likes')[:20])
     return render(request,template_name='list.html',context={"objects":objects})
