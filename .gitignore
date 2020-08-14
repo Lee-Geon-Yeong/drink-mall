@@ -131,4 +131,5 @@ mysite/media/*
 mysite/static/*
 model_erd.mwb
 mysite/db_snaps/*
+mysite/mysite/settings.py
 
